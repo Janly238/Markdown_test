@@ -56,7 +56,7 @@ Tokenquery
 |date_m_is	|日期的月份等于括号内的月份|	[date:date_m_is(9)]， [date:date_m_is(09)]
 |date_d_is	|日期的天数等于括号内的天数|	[date:date_y_is(15)]
 
-### vector向量
+### 向量
 | 函数名 | 含义 | 例子
 | ------ | ----- | -----
 | change_string_to_vector| 逗号分隔，忽略空格，每个单元转为float类型|
@@ -83,6 +83,8 @@ X and Y or Z    <=>   ( X and (Y or Z) )
 |is_in_sentence |判断是否在句子中|is_in_sentence (True)
 |is_in_paragraph| 判断是否在段落中|is_in_paragraph(ptitle)
 |is_in_section|判断是否在章节中|is_in_section(requ)
+|contains_pos| 是否包含某词性 |contains_pos(njdt_requ_opt)
+|contains_pos_reg| 是否包含某词性 |contains_pos_reg(njdt)
 
 
 ### taxonomy 字典
@@ -94,3 +96,111 @@ X and Y or Z    <=>   ( X and (Y or Z) )
 |tax_is_jd_require_title| 是否岗位要求|岗位要求、职位要求、任职资格、招聘详情、职责要求、任职要求、就职标准
 |tax_is_jd_opt_require_title| 是否可选择的标题|加分项、以下.*优先
 |tax_is_jd_respons_title|岗位要求题目|工作职责、岗位职责、职位描述、职责表述、职责
+
+
+JTL
+====
+
+JTL： JSON 转换语言
+
+### 算术运算
+JTL 使用与Python相同的语义支持以波兰语表示的以下运算符：
+
+* 算术：+，-，\*，/，\*\*，%
+* 比较：==，!=，<，<=，>，>=
+例如：
+```
+"candidates $ first $ .text $ extractInt+3.0"
+```
+
+### function 函数
+JTL有各种各样的内置转换。为了方便处理缺失值，除非另有说明，否则所有函数都将通过null（非常类似monad选项）。
+
+### 基本
+| 函数名 | 含义 
+| ------ | ----- 
+|default\<value\> | 返回输入值或第一个参数，如果输入是null（这是特殊null处理的情况下）
+|defaultNan |如果输入是null，返回输入值或NaN
+|isNull | 如果值是null，则返回true
+|toBool |将输入值转换为布尔值。
+|toFloat| 将输入值转换为浮点数，如果不是有效数字则返回null
+|toInt| 将输入值转换为整数，如果不是有效整数则返回null
+|toString|将输入值转换为字符串
+|extractInt | 文本中的数字转成int类型的数字（十四-->14）
+|toNumber | 优先转为Float类型，否则返回int类型
+
+### Bool 布尔
+```not```
+反转布尔值。
+
+### Dictionary字典
+| 函数名 | 含义 
+| ------ | ----- 
+|keys|以列表形式返回字典的key
+|values |以列表形式返回字典的值
+
+### Hashing 哈希
+JTL支持多种加密散列函数：
+```md5，sha1，sha224，sha256，sha384，sha512。```
+```另外，对于每种散列类型（例如）都支持HMAChmac_md5。```
+
+### Math 数学
+
+* 基础知识：abs，ceil，floor
+* 指数：exp，lg，ln，log，sqrt
+* 标志：isFinite，isNan
+* 三角：sin，cos，tan
+* 双曲三角：sinh，cosh，tanh
+* 高级： erf
+
+### Sequence序列
+| 函数名 | 含义 
+| ------ | ----- 
+|count <ELEMENT> |返回元素出现在列表中的次数。
+|first |返回列表的第一个元素，如果列表是空则返回null
+|init |返回列表中除最后一个之外的所有元素
+|last |返回列表的最后一个元素，如果列表是空则返回null
+|rest |在第一个元素之后返回列表的其余部分
+|length |返回列表的长度
+|max |在列表中找到最大值
+|min |在列表中找到最小值
+|sorted | 返回列表的排序版本
+|sum |采取列表中的值的总和
+|unique|返回删除重复项的列表副本
+
+### string串
+* 转型：capitalize，lower，swapCase，upper
+* 搜索：find，replace，startsWith，endsWith
+* 拆分/加入：join，split，lines，unlines，words，unwords
+*  空格：lstrip，rstrip，strip
+
+转型
+*'lower': lambda s: s.lower(),
+*  'upper': lambda s: s.upper(),
+* 'capitalize': lambda s: s.capitalize(),
+* 'swapCase': lambda s: s.swapcase(),
+
+空格
+* 'strip': lambda s: s.strip(),
+*  'lstrip': lambda s: s.lstrip(),
+*  'rstrip': lambda s: s.rstrip(),
+
+搜索
+* 'find': lambda s, f: s.find(f),
+*   'replace': lambda s, f, g: s.replace(f, g),
+*  'startsWith': lambda s, f: s.startswith(f),
+*  'endsWith': lambda s, f: s.endswith(f),
+*  'append': lambda s, f: (s or '') + (f or ''),
+
+拆分/加入
+*  'split': lambda s, sp: s.split(sp),
+*  'lines': lambda s: s.split('\n'),
+*  'unlines': lambda s: '\n'.join(s),
+*  'words': lambda s: s.split(' '),
+*  'unwords': lambda s: ' '.join(s),
+
+### 文本操作
+| 函数名 | 含义 
+| ------ | ----- 
+|seq_filter | 序列过滤器 
+|mapper | 映射
