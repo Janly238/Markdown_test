@@ -2,8 +2,8 @@ Tokenquery
 ====
 
 ## Tokenquery是什么
-Token，将文本分解成更小的处理单元（令牌）
-Tokenquery，查询提取令牌序列
+* Token，将文本分解成更小的处理单元（令牌）
+* STokenquery，查询提取令牌序列
 
 ### TokenQuery语言
 ```[expr_for_token1][expr_for_token2][expr_for_token3]```
@@ -65,8 +65,8 @@ Tokenquery，查询提取令牌序列
 
 ### 复合表达式
 可以用多个基本表达式，组合元素。基本表达式：与and，或or，非！。	
-*[!pos:str_reg(V.*)]意味着它不是一个任何标记的动词。  		
-*[pos:str_reg(V.*)&!str_eq(is)]匹配任何动词并且不是is。您可以使用圆括号来更改优先级。
+* [!pos:str_reg(V.*)]意味着它不是一个任何标记的动词。  		
+* [pos:str_reg(V.*)&!str_eq(is)]匹配任何动词并且不是is。您可以使用圆括号来更改优先级。
 ```
 !X and Y        <=>   ( (!(X)) and Y )
 !(X and Y)      <=>   ( !(X and Y) )
