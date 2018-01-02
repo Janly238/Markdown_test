@@ -37,8 +37,7 @@ Tokenquery，查询提取令牌序列
 |int_le	|小于等于，相当于int_value(<=X)	|[int_le(12)]
 |int_ge	|大于等于，相当于 int_value(>=X)	|[int_ge(0)]
 
-### web
-捕捉web模式
+### web  捕捉web模式
 | 函数名 | 含义 | 例子
 | ------ | ----- | -----
 |web_is_url	|该字符串是一个网址	|[text:web_is_url()] ， [freebase_id:web_is_url()]
@@ -65,10 +64,13 @@ Tokenquery，查询提取令牌序列
 |vec_man_dist	|曼哈顿两个向量之间的距离|	[word2vec:vec_man_dist([1, 0, -2, 1.5]>=10)]
 
 ### 复合表达式
-可以用多个基本表达式，组合元素。基本表达式：与and，或or，非！。							  [!pos:str_reg(V.*)]意味着它不是一个任何标记的动词。  		[pos:str_reg(V.*)&!str_eq(is)]匹配任何动词并且不是is。您可以使用圆括号来更改优先级。
-
-|!X and Y        <=>   ( (!(X)) and Y )
-|!(X and Y)      <=>   ( !(X and Y) )
+可以用多个基本表达式，组合元素。基本表达式：与and，或or，非！。	
+        [!pos:str_reg(V.*)]意味着它不是一个任何标记的动词。  		
+        [pos:str_reg(V.*)&!str_eq(is)]匹配任何动词并且不是is。您可以使用圆括号来更改优先级。
+```
+!X and Y        <=>   ( (!(X)) and Y )
+!(X and Y)      <=>   ( !(X and Y) )
 !(X and Y) or Z <=>   ( ( !(X and Y) ) or Z )
 (X and Y) or Z  <=>   ( ( X and Y) or Z )
 X and Y or Z    <=>   ( X and (Y or Z) )
+```
