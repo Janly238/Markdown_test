@@ -163,8 +163,8 @@ Tokenquery
 ====
 
 ## Tokenquery是什么
--Token，将文本分解成更小的处理单元（key）
--Tokenquery，查询提取令牌序列 
+        Token，将文本分解成更小的处理单元（key）
+        Tokenquery，查询提取令牌序列 
 
 ### TokenQuery语言
 ```[expr_for_token1][expr_for_token2][expr_for_token3]```
