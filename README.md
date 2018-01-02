@@ -56,7 +56,7 @@ Tokenquery
 |date_m_is	|日期的月份等于括号内的月份|	[date:date_m_is(9)]， [date:date_m_is(09)]
 |date_d_is	|日期的天数等于括号内的天数|	[date:date_y_is(15)]
 
-### 向量
+### vector向量
 | 函数名 | 含义 | 例子
 | ------ | ----- | -----
 | change_string_to_vector| 逗号分隔，忽略空格，每个单元转为float类型|
