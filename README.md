@@ -175,37 +175,37 @@ JTL支持多种加密散列函数：
 * 拆分/加入：join，split，lines，unlines，words，unwords
 
 转型
-| 函数名 | 含义 
+| 函数名 | 使用 
 | ------ | -----
-|lower|lambda s: s.lower()
-| upper| lambda s: s.upper()
-| capitalize | lambda s: s.capitalize()
-| swapCase | lambda s: s.swapcase()
+|lower|  s.lower()
+| upper|   s.upper()
+| capitalize |   s.capitalize()
+| swapCase |   s.swapcase()
 
 空格
-| 函数名 | 含义 
+| 函数名 | 使用  
 | ------ | -----
-|strip| lambda s: s.strip()
-|  lstrip| lambda s: s.lstrip()
-| rstrip| lambda s: s.rstrip()
+|strip|   s.strip()
+|  lstrip|   s.lstrip()
+| rstrip|   s.rstrip()
 
 搜索
-| 函数名 | 含义 
+| 函数名 | 使用  
 | ------ | -----
-| find | lambda s, f: s.find(f)
-| replace | lambda s, f, g: s.replace(f, g)
-| startsWith | lambda s, f: s.startswith(f)
-| endsWith | lambda s, f: s.endswith(f)
-| append | lambda s, f: (s or '') + (f or '')
+| find |   s.find(f)
+| replace |   s.replace(f, g)
+| startsWith |   s.startswith(f)
+| endsWith |   s.endswith(f)
+| append |   (s or '') + (f or '')
 
 拆分/加入
-| 函数名 | 含义 
+| 函数名 | 使用
 | ------ | -----
-|  split| lambda s, sp: s.split(sp)
-|  lines| lambda s: s.split('\n')
-|  unlines|lambda s: '\n'.join(s)
-|  words| lambda s: s.split(' ')
-| unwords| lambda s: ' '.join(s)
+|  split|  s.split(sp)
+|  lines|  s.split('\n')
+|  unlines| '\n'.join(s)
+|  words|   s.split(' ')
+| unwords|   ' '.join(s)
 
 ### 文本操作
 | 函数名 | 含义 
