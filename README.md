@@ -174,7 +174,7 @@ JTL支持多种加密散列函数：
 * 搜索：find，replace，startsWith，endsWith
 * 拆分/加入：join，split，lines，unlines，words，unwords
 
-转型
+#### 转型
 | 函数名 | 使用 
 | ------ | -----
 |lower|  s.lower()
@@ -182,14 +182,14 @@ JTL支持多种加密散列函数：
 | capitalize |   s.capitalize()
 | swapCase |   s.swapcase()
 
-空格
+#### 空格
 | 函数名 | 使用  
 | ------ | -----
 |strip|   s.strip()
 |  lstrip|   s.lstrip()
 | rstrip|   s.rstrip()
 
-搜索
+#### 搜索
 | 函数名 | 使用  
 | ------ | -----
 | find |   s.find(f)
@@ -198,7 +198,7 @@ JTL支持多种加密散列函数：
 | endsWith |   s.endswith(f)
 | append |   (s or '') + (f or '')
 
-拆分/加入
+#### 拆分/加入
 | 函数名 | 使用
 | ------ | -----
 |  split|  s.split(sp)
