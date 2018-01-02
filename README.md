@@ -59,6 +59,7 @@ Tokenquery
 ### 向量
 | 函数名 | 含义 | 例子
 | ------ | ----- | -----
+| change_string_to_vector| 逗号分隔，忽略空格，每个单元转为float类型|
 |vec_cos_sim	|两个向量之间的余弦相似性	|[word2vec:vec_cos_sim([1, 0, -2, 1.5]>0.5)]
 |vec_cos_dist	|两个向量之间的余弦距离|	[word2vec:vec_cos_dist([1, 0, -2, 1.5]==0)]
 |vec_man_dist	|曼哈顿两个向量之间的距离|	[word2vec:vec_man_dist([1, 0, -2, 1.5]>=10)]
@@ -74,3 +75,22 @@ Tokenquery
 (X and Y) or Z  <=>   ( ( X and Y) or Z )
 X and Y or Z    <=>   ( X and (Y or Z) )
 ```
+
+### location 位置
+| 函数名 | 含义 | 例子
+| ------ | ----- | -----
+|sentence_index | 检查索引的范围|sentence_index(<20%),sentence_index(<3)
+|is_in_sentence |判断是否在句子中|is_in_sentence (True)
+|is_in_paragraph| 判断是否在段落中|is_in_paragraph(ptitle)
+|is_in_section|判断是否在章节中|is_in_section(requ)
+
+
+### taxonomy 字典
+| 函数名 | 含义 | 例子
+| ------ | ----- |-----
+|tax_is_job_title|是否职位名称|
+|tax_is_job_title_root|是否职位名称(根名称)|
+|tax_is_skill_level| 技能等级| 熟悉、熟练、了解、精通、能够、掌握
+|tax_is_jd_require_title| 是否岗位要求|岗位要求、职位要求、任职资格、招聘详情、职责要求、任职要求、就职标准
+|tax_is_jd_opt_require_title| 是否可选择的标题|加分项、以下.*优先
+|tax_is_jd_respons_title|岗位要求题目|工作职责、岗位职责、职位描述、职责表述、职责
