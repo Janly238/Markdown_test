@@ -173,10 +173,11 @@ Tokenquery，查询提取令牌序列
 符号 | 含义 | 例子
 ------ |-----|-----
  ?	| 一次或根本不	| [expr_for_token]? 
-*	| 零次或多次	| [expr_for_token]* 
+ *	| 零次或多次	| [expr_for_token]* 
  +	| 一次或多次	| [expr_for_token]+ 
  {x}	| x次数	| [expr_for_token]{3} 
  {x,y}	| 在x和y之间的次数	| [expr_for_token]{3,5}  
 
 
 
+ 
