@@ -1,6 +1,6 @@
 Tokenquery
 ====
-
+[参考文档] (https://github.com/threfo/tokenquery)  
 ## Tokenquery是什么
 * Token，将文本分解成更小的处理单元（令牌）
 * STokenquery，查询提取令牌序列
@@ -100,8 +100,8 @@ X and Y or Z    <=>   ( X and (Y or Z) )
 
 JTL
 ====
-
 JTL： JSON 转换语言
+[参考文档] (https://github.com/AgalmicVentures/JTL)  
 
 ### 算术运算
 JTL 使用与Python相同的语义支持以波兰语表示的以下运算符：
@@ -156,7 +156,7 @@ JTL支持多种加密散列函数：
 ### Sequence序列
 | 函数名 | 含义 
 | ------ | ----- 
-|count <ELEMENT> |返回元素出现在列表中的次数。
+|count \<ELEMENT\> |返回元素出现在列表中的次数。
 |first |返回列表的第一个元素，如果列表是空则返回null
 |init |返回列表中除最后一个之外的所有元素
 |last |返回列表的最后一个元素，如果列表是空则返回null
@@ -170,37 +170,46 @@ JTL支持多种加密散列函数：
 
 ### string串
 * 转型：capitalize，lower，swapCase，upper
+* 空格：lstrip，rstrip，strip 
 * 搜索：find，replace，startsWith，endsWith
 * 拆分/加入：join，split，lines，unlines，words，unwords
-*  空格：lstrip，rstrip，strip
 
 转型
-*'lower': lambda s: s.lower(),
-*  'upper': lambda s: s.upper(),
-* 'capitalize': lambda s: s.capitalize(),
-* 'swapCase': lambda s: s.swapcase(),
+| 函数名 | 含义 
+| ------ | -----
+|lower|lambda s: s.lower()
+| upper| lambda s: s.upper()
+| capitalize | lambda s: s.capitalize()
+| swapCase | lambda s: s.swapcase()
 
 空格
-* 'strip': lambda s: s.strip(),
-*  'lstrip': lambda s: s.lstrip(),
-*  'rstrip': lambda s: s.rstrip(),
+| 函数名 | 含义 
+| ------ | -----
+|strip| lambda s: s.strip()
+|  lstrip| lambda s: s.lstrip()
+| rstrip| lambda s: s.rstrip()
 
 搜索
-* 'find': lambda s, f: s.find(f),
-*   'replace': lambda s, f, g: s.replace(f, g),
-*  'startsWith': lambda s, f: s.startswith(f),
-*  'endsWith': lambda s, f: s.endswith(f),
-*  'append': lambda s, f: (s or '') + (f or ''),
+| 函数名 | 含义 
+| ------ | -----
+|find| lambda s, f: s.find(f)
+| replace| lambda s, f, g: s.replace(f, g)
+| startsWith| lambda s, f: s.startswith(f)
+| endsWith| lambda s, f: s.endswith(f)
+| append| lambda s, f: (s or '') + (f or '')
 
 拆分/加入
-*  'split': lambda s, sp: s.split(sp),
-*  'lines': lambda s: s.split('\n'),
-*  'unlines': lambda s: '\n'.join(s),
-*  'words': lambda s: s.split(' '),
-*  'unwords': lambda s: ' '.join(s),
+| 函数名 | 含义 
+| ------ | -----
+|  split| lambda s, sp: s.split(sp)
+|  lines| lambda s: s.split('\n')
+|  unlines|lambda s: '\n'.join(s)
+|  words| lambda s: s.split(' ')
+| unwords| lambda s: ' '.join(s)
 
 ### 文本操作
 | 函数名 | 含义 
 | ------ | ----- 
 |seq_filter | 序列过滤器 
 |mapper | 映射
+  
